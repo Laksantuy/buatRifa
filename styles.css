@@ -1,0 +1,493 @@
+        body {
+            margin: 0;
+            font-family: 'Quicksand';
+            background-color: #FFF5F0;
+            color: #333;
+        }
+
+        section {
+            transition: opacity 0.5s ease;
+        }
+        
+        header {
+            text-align: center;
+            padding-top: 3rem;
+            padding-bottom: 1rem;
+        }
+
+        header h1 {
+            font-family: 'Courgette', cursive;
+            font-weight: 400;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        #pesan_utama {
+            display: none;
+        }
+
+        #kotak_pesan {
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin: 2rem auto;
+            max-width: 800px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        #pesan {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 1rem;
+            font-size: 1rem;
+            color: #777;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #apa_kabar {
+            display: none;
+        }
+
+        #layar_apa_kabar {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 998;
+            text-align: center;
+        }
+
+        #teks_kabar {
+            font-family: 'Quicksand';
+            font-size: 2.5rem;
+            color: #cc5a5a;
+            opacity: 0;
+            animation: animasi_teks_kabar 3s ease-in-out forwards;
+        }
+
+        #emoji_kabar {
+            font-size: 2rem;
+            display: inline-block;
+            opacity: 0;
+            animation: animasi_emoji 3s ease-in-out 1.5s forwards;
+        }
+
+        @keyframes animasi_teks_kabar{
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            30% {
+                opacity: 1;
+                transform: translateY(0) scale(1.1);
+            }
+            50% {
+                transform: scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @keyframes animasi_emoji {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) rotate(-10deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-10px) rotate(5deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        #verifikasi {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff0f1;
+        }
+
+        #kotak_verifikasi {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        #kotak_verifikasi h2, #kotak_verifikasi h3 {
+            font-family: 'Quicksand';
+            font-weight: 600;
+        }
+
+        .button_group {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .button {
+            padding: 0.7rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Quicksand';
+            font-weight: 600;
+        }
+
+        .button.iya {
+            background-color: #ff9aa2;
+            color: #fff;
+            box-shadow: 0 4px 10px rgba(255, 154, 162, 0.4);
+        }
+
+        .button.iya:hover {
+            transform: translateY(-3px);
+            background-color: #ff7f8c;
+            box-shadow: 0 6px 14px rgba(255, 127, 140, 0.5);
+        }
+
+        .button.tidak {
+            background-color: #d3d3d3;
+            color: #444;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .button.tidak:hover {
+            transform: translateY(-3px);
+            background-color: #bbbbbb;
+        }
+
+        #pertanyaan {
+            height: 100vh;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff0f1;
+        }
+
+        .box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .soal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2rem;
+            gap: 1.5rem;
+        }
+        
+        .soal h3 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .soal input {
+            width: 80%;
+            max-width: 400px;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .soal button {
+            background-color: #ff8f9c;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 30px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 10px rgba(255, 143, 156, 0.3);
+            transition: background-color 0.3s ease;
+        }
+
+        .soal button:hover {
+            background-color: #ff7482;
+        }
+
+        input {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-family: 'Quicksand';
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #aaa;
+            font-style: italic;
+        }
+
+        /* styling buat gambar-gambar */
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff9aa2;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 154, 162, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .question-image {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .question-image:hover {
+            transform: scale(1.02);
+        }
+
+        .greeting-image {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-top: 1rem;
+            opacity: 0;
+            animation: animasi_emoji 3s ease-in-out 1.5s forwards;
+        }
+
+        .banner {
+            width: 250px;
+            height: auto;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .message-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .message-image:hover {
+            transform: scale(1.02);
+        }
+
+        .center-image {
+            display: block;
+            margin: 1.5rem auto;
+            max-width: 300px;
+        }
+
+        .small-image {
+            max-width: 200px;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Samsung A35 atau Victus 15 Inch */
+        /* aku gatau cara ngubah inci ke pixel sebenernya hehe, aku minta bantu gpt dan katanya a35 360 x 780, tapi jaga-jaga aku buat beberapa case */
+        @media screen and (max-width: 768px) {
+            header {
+                padding-top: 2rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            #kotak_pesan {
+                margin: 2rem 1rem;
+                padding: 1.5rem;
+            }
+
+            #pesan {
+                padding: 1.5rem;
+            }
+
+            #teks_kabar {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .question-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .birthday-banner {
+                width: 200px;
+            }
+
+            .greeting-image {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media screen and (max-width: 480px) { /* kemungkinan besar kalau rifa buka pake hp, ini yang muncul */
+            header {
+                padding-top: 1.5rem;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            #kotak_pesan {
+                margin: 1.5rem 1rem;
+                padding: 1rem;
+            }
+
+            #pesan {
+                padding: 1rem;
+            }
+
+            #teks_kabar {
+                font-size: 1.8rem;
+                padding: 0 1rem;
+            }
+
+            #emoji_kabar {
+                font-size: 1.8rem;
+            }
+
+            footer {
+                margin-top: 3rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .profile-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .question-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .birthday-banner {
+                width: 180px;
+            }
+
+            .greeting-image {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            #teks_kabar {
+                font-size: 1.5rem;
+            }
+
+            #emoji_kabar {
+                font-size: 1.5rem;
+            }
+
+            #kotak_pesan {
+                margin: 1rem 0.5rem;
+                padding: 0.8rem;
+            }
+
+            #pesan {
+                padding: 0.8rem;
+            }
+
+            .profile-image {
+                width: 70px;
+                height: 70px;
+            }
+
+            .question-image {
+                width: 100px;
+                height: 100px;
+            }
+
+            .birthday-banner {
+                width: 150px;
+            }
+        }
